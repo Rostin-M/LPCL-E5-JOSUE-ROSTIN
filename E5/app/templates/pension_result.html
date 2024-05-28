@@ -1,0 +1,16 @@
+<!-- app/templates/pension_result.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Resultados del Cálculo de Pensión</h2>
+    <div class="result-container">
+        <p><strong>Valor de ahorro pensional esperado:</strong> ${{ resultado[0] | round(2) }}</p>
+        <p><strong>Valor de pensión anual:</strong> ${{ resultado[1] | round(2) }}</p>
+        <p><strong>Valor de pensión mensual:</strong> ${{ resultado[2] | round(2) }}</p>
+    </div>
+    <div class="text-center">
+        <a href="{{ url_for('pension.pension_calculator') }}" class="btn btn-primary">Calcular de nuevo</a>
+    </div>
+</div>
+{% endblock %}
