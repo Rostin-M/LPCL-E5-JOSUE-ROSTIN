@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="form-container">
+
+    <h2>Calculadora de Pensión</h2>
+
+    <form method="POST" action="{{ url_for('pension.pension_calculator') }}">
+        
+        <label for="current_salary">Salario Actual:</label>
+        <input type="number" id="current_salary" name="current_salary" min="0" required>
+
+        <label for="worked_weeks">Semanas Laboradas:</label>
+        <input type="number" id="worked_weeks" name="worked_weeks" min="1150" required>
+
+        <label for="current_savings">Ahorro Actual:</label>
+        <input type="number" id="current_savings" name="current_savings" min="0" required>
+
+        <label for="fund_profitability">Rentabilidad del Fondo (%):</label>
+        <input type="number" id="fund_profitability" name="fund_profitability" min="0" max="100" required>
+
+        <label for="administration_fee">Tasa de Administración (%):</label>
+        <input type="number" id="administration_fee" name="administration_fee" min="0" required>
+
+        <button type="submit">Realizar Calculo</button>
+
+</div>
+{% endblock %}
